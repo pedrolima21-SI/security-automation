@@ -1,0 +1,10 @@
+# Exemplo sintético
+
+O arquivo abaixo serve apenas para validação local e não representa dados reais.
+
+```csv
+record_id,status
+A-001,complete
+A-002,
+A-003,complete
+```

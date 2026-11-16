@@ -6,27 +6,31 @@ Repositório dedicado a ferramentas, utilitários e práticas de automação em 
 
 ## Estado
 
-**Em desenvolvimento.**  
-O foco está em criar utilitários pequenos, claros e seguros, com documentação adequada e uso responsável.
+**Em desenvolvimento.**
 
-## Áreas de foco
+A estrutura inicial já inclui documentação e organização de exemplos. A primeira ferramenta em execução está focada em revisão local e segura de arquivos CSV, sem expor conteúdo sensível.
 
-- Organização de dados
-- Automação de tarefas repetitivas
-- Parsing e processamento de informações
-- Apoio em workflows técnicos
-- Documentação e consolidação de dados
+## Ferramenta atual
+
+- [`scripts/review_csv.py`](scripts/review_csv.py): valida estrutura de CSV local, checa colunas obrigatórias, conta linhas de dados e identifica campos vazios sem imprimir valores das células.
+- [`docs/review-csv.md`](docs/review-csv.md): documentação da ferramenta e exemplos de uso.
+- [`examples/sample.csv`](examples/sample.csv): arquivo sintético para testes seguros.
 
 ## Estrutura
 
 ```text
 .
 ├── docs/
+│   ├── review-csv.md
 │   └── tool-guidelines.md
 ├── examples/
-│   └── README.md
+│   ├── README.md
+│   └── sample.csv
 ├── scripts/
-│   └── README.md
+│   ├── README.md
+│   └── review_csv.py
+├── tests/
+│   └── test_review_csv.py
 ├── README.md
 ├── LICENSE
 └── .gitignore
@@ -34,11 +38,13 @@ O foco está em criar utilitários pequenos, claros e seguros, com documentaçã
 
 ## Como usar
 
-1. Revise a documentação em [`docs/tool-guidelines.md`](docs/tool-guidelines.md).
-2. Consulte os exemplos em [`examples/README.md`](examples/README.md).
-3. Use apenas dados próprios, públicos ou cujo processamento tenha autorização.
-4. Documente entradas, saídas, limitações e riscos antes de executar qualquer utilitário.
-5. Evite expor segredos, credenciais ou dados sensíveis.
+1. Revise os requisitos em [`docs/review-csv.md`](docs/review-csv.md).
+2. Use somente dados próprios, públicos ou com autorização explícita.
+3. Para validar a ferramenta localmente:
+
+```bash
+python scripts/review_csv.py examples/sample.csv --required-column record_id --required-column status
+```
 
 ## Princípios
 
